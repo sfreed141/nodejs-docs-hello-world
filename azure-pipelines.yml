@@ -24,7 +24,7 @@ steps:
 - task: AzureRmWebAppDeployment@4
   inputs:
     connectionType: 'AzureRM'
-    azureSubscription: agariocloneARM
+    azureSubscription: test
     appType: 'webAppLinux'
     webAppName: 'agarioclone'
     packageForLinux: '$(System.DefaultWorkingDirectory)/*.zip'
