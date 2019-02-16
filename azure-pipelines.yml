@@ -18,12 +18,13 @@ steps:
 - script: |
     npm install
     npm run build
+    zip -r test.zip .
   displayName: 'npm install and build'
 
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
-    includeRootFolder: false
+#- task: ArchiveFiles@2
+#  inputs:
+#    rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+#    includeRootFolder: false
 
 - task: PublishBuildArtifacts@1
   inputs:
