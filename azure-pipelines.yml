@@ -21,10 +21,14 @@ steps:
     zip -r agarioclone.zip .
   displayName: 'npm install and build'
 
-- task: AzureRmWebAppDeployment@4
+- task: PublishBuildArtifacts@1
   inputs:
-    connectionType: 'AzureRM'
-    azureSubscription: test
-    appType: 'webAppLinux'
-    webAppName: 'agarioclone'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/*.zip'
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/*.zip'
+
+#- task: AzureRmWebAppDeployment@4
+#  inputs:
+#    connectionType: 'AzureRM'
+#    azureSubscription: test
+#    appType: 'webAppLinux'
+#    webAppName: 'agarioclone'
+#    packageForLinux: '$(System.DefaultWorkingDirectory)/*.zip'
